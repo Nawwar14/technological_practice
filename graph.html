@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Graph</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" />
+    <style>
+        #network {
+            width: 800px;
+            height: 600px;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html"> K глоссарому терминов</a>    
+
+    <h1>График</h1>
+    <div id="network"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script>
+        // Your Vis.js script goes here
+    // Define nodes
+    const nodes = new vis.DataSet([
+        { id: 1, label: "Пользовательские данные" },
+        { id: 2, label: "Атрибуты группы" },
+        { id: 3, label: "Машинное обучение" },
+        { id: 4, label: "Оценка метрик" },
+        { id: 5, label: "Результ" },
+		
+		
+		{ id: 6, label: "IP" },
+		{ id: 7, label: "Дата" },
+		
+		{ id: 8, label: "SVM" },
+		{ id: 9, label: "KNN" },
+		
+		{ id: 10, label: "F1" },
+		
+		{ id: 11, label: "Робот" },
+		{ id: 12, label: "Человек" }
+		
+    ]);
+	
+
+
+    // Define edges (links)
+    const edges = new vis.DataSet([
+	    { from: 1, to: 2 , label: "" },
+	    { from: 2, to: 3 },
+	    { from: 3, to: 4 },
+	    { from: 4, to: 5 },
+	    
+
+        { from: 6, to: 1},
+        { from: 7, to: 1 },
+		
+        { from: 8, to: 3 },
+        { from: 9, to: 3 },
+		
+		{ from: 10, to: 4 },
+		
+		{ from: 5, to: 11 },
+        { from: 5, to: 12 },
+    ]);
+
+    // Create a network
+    const container = document.getElementById("network");
+    const data = {
+        nodes: nodes,
+        edges: edges
+    };
+
+    const options = {
+        nodes: {
+            shape: "dot",
+            size: 15,
+            font: {
+                size: 16
+            },
+            borderWidth: 2
+        },
+        edges: {
+            width: 2,
+            color: { color: "#848484", highlight: "#d9534f" },
+            arrows: {
+               to: { enabled: true, scaleFactor: 1 }
+            }
+        },
+        physics: {
+            enabled: true,
+            solver: "forceAtlas2Based",
+            stabilization: { iterations: 150 }
+        }
+    };
+
+    const network = new vis.Network(container, data, options);
+</script>
+</body>
+</html>
