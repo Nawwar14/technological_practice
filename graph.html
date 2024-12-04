@@ -32,12 +32,21 @@
 		
 		
 		{ id: 6, label: "IP" },
-		{ id: 7, label: "Дата" },
+		{ id: 7, label: "language" },
+		{ id: 13, label: "Страна" },
+		{ id: 14, label: "timeZone" },
+		{ id: 15, label: "dateTime" },
+		{ id: 16, label: "pageURL" },
 		
 		{ id: 8, label: "SVM" },
 		{ id: 9, label: "KNN" },
-		
+		{ id: 17, label: "Логистическая регрессия" },
+		{ id: 18, label: "Дерево решений" },
+		{ id: 19, label: "Случайный лес" },
+
+
 		{ id: 10, label: "F1" },
+		{ id: 20, label: "ROC-curve" },		
 		
 		{ id: 11, label: "Робот" },
 		{ id: 12, label: "Человек" }
@@ -54,13 +63,21 @@
 	    { from: 4, to: 5 },
 	    
 
-        { from: 6, to: 1},
+        { from: 6, to: 1, label: ""},
         { from: 7, to: 1 },
+		{ from: 13, to: 1 },
+		{ from: 14, to: 1 },
+		{ from: 15, to: 1 },
+		{ from: 16, to: 1 },
 		
         { from: 8, to: 3 },
         { from: 9, to: 3 },
-		
+        { from: 17, to: 3 },
+        { from: 18, to: 3 },
+        { from: 19, to: 3 },
+				
 		{ from: 10, to: 4 },
+		{ from: 20, to: 4 },		
 		
 		{ from: 5, to: 11 },
         { from: 5, to: 12 },
